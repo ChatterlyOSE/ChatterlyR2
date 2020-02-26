@@ -1088,8 +1088,8 @@ class RedditFooter(CachedTemplate):
     def __init__(self):
         self.nav = [
             NavMenu([
-                    NamedButton("blog", False, dest="/blog"),
-                    OffsiteButton("about", "https://about.reddit.com/"),
+                    NamedButton("blog", False, dest="https://blog.chatterly.me"),
+                    OffsiteButton("about", "https://about.chatterly.me/display/CHAT/about"),
                     NamedButton("source_code", False, dest="/code"),
                     NamedButton("advertising", False),
                     NamedButton("jobs", False),
@@ -1100,9 +1100,8 @@ class RedditFooter(CachedTemplate):
 
             NavMenu([
                     NamedButton("rules", False),
-                    OffsiteButton(_("FAQ"), "https://reddit.zendesk.com"),
+                    OffsiteButton(_("FAQ"), "https://help.chatterly.me/display/CHAT/FAQ"),
                     NamedButton("wiki", False),
-                    NamedButton("reddiquette", False, dest="/wiki/reddiquette"),
                     NamedButton("transparency", False, dest="/wiki/transparency"),
                     NamedButton("contact", False),
                 ],
@@ -1111,11 +1110,11 @@ class RedditFooter(CachedTemplate):
                 separator = ""),
 
             NavMenu([
-                    OffsiteButton(_("Reddit for iPhone"),
+                    OffsiteButton(_("myChatterly for iPhone"),
                         "https://itunes.apple.com/us/app/reddit-the-official-app/id1064216828?mt=8"),
-                    OffsiteButton(_("Reddit for Android"),
-                        "https://play.google.com/store/apps/details?id=com.reddit.frontpage"),
-                    OffsiteButton(_("mobile website"), "https://m.reddit.com"),
+                    OffsiteButton(_("myChatterly for Android"),
+                        "https://play.google.com/store/apps/details?id=me.chatterly.my"),
+                    OffsiteButton(_("mobile website"), "https://m.chatterly.me"),
                     NamedButton("buttons", False),
                 ],
                 title = _("apps & tools"),
@@ -1123,8 +1122,10 @@ class RedditFooter(CachedTemplate):
                 separator = ""),
 
             NavMenu([
-                    NamedButton("gold", False, dest="/gold/about", css_class="buygold"),
-                    OffsiteButton(_("redditgifts"), "//redditgifts.com"),
+                    NamedButton("gold", False, dest="/gold", css_class="buygold"),
+                    OffsiteButton(_("Chatterly Status"), "//status.myroxxon.com"),
+                    OffsiteButton(_("Help Us Translate"), "//crowdin.com/project/chatterly"),
+                    OffsiteButton(_("myRoxxon Home"), "//myroxxon.com"),
                 ],
                 title = _("<3"),
                 type = "flat_vert",
