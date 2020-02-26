@@ -32,11 +32,28 @@
   <head>
     <title>${self.Title()}</title>
     <meta name="keywords" content="${self.keywords()}" />
+    <meta name="theme-color" content="#00ffea">
     <meta name="description" content="${getattr(thing, 'short_description', None) or g.short_description}" />
     <meta name="referrer" content="${c.referrer_policy}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link type="application/opensearchdescription+xml" rel="search" href="/static/opensearch.xml"/>
     <link rel="canonical" href="${thing.canonical_link}" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6044769353518840",
+          enable_page_level_ads: true
+     });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6YLG4MFSS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T6YLG4MFSS');
+    </script>
     ${self.viewport()}
     ${self.robots()}
     ${self.pagemeta()}
