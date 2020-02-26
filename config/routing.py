@@ -70,16 +70,17 @@ def make_map(config):
     mc('/submit', controller='front', action='submit')
 
     # redirect old urls to the new
-    ABOUT_BASE = "https://about.reddit.com/"
+    ABOUT_BASE = "https://about.chatterly.me/"
+    CAREERS_BASE = "https://careers.myroxxon.com/"
     mc('/about', controller='redirect', action='redirect', dest=ABOUT_BASE, 
        conditions={'function':not_in_sr})
     mc('/about/values', controller='redirect', action='redirect', dest=ABOUT_BASE)
     mc('/about/team', controller='redirect', action='redirect',
-       dest=ABOUT_BASE)
+       dest=ABOUT_BASE + "display/CHAT/Chatterly+Team")
     mc('/about/alien', controller='redirect', action='redirect',
        dest=ABOUT_BASE + "press")
     mc('/jobs', controller='redirect', action='redirect',
-       dest=ABOUT_BASE + "careers")
+       dest=CAREERS_BASE + "chatterly")
 
     mc('/over18', controller='post', action='over18')
     mc('/quarantine', controller='post', action='quarantine')
@@ -136,9 +137,9 @@ def make_map(config):
     mc('/awards/received', controller='front', action='received_award')
 
     mc('/i18n', controller='redirect', action='redirect',
-       dest='https://www.reddit.com/r/i18n')
+       dest='https://chatterly.me/r/i18n')
     mc('/feedback', controller='redirect', action='redirect',
-       dest='/contact')
+       dest='https://support.myroxxon.com/servicedesk/customer/portal')
     mc('/contact', controller='frontunstyled', action='contact_us')
 
     mc('/admin/awards', controller='awards')
@@ -321,9 +322,11 @@ def make_map(config):
        conditions={'function':not_in_sr},
        requirements={'page':'contentpolicy|privacypolicy|useragreement'})
     mc('/rules', controller='redirect', action='redirect',
-        dest='/help/contentpolicy')
+        dest='https://help.chatterly.me/display/CHAT/Site+Rules')
+    mc('/servicedesk', controller='redirect', action='redirect',
+       dest='https://support.ehlomedia.com/servicedesk/customer/portal/1')
     mc('/faq', controller='redirect', action='redirect',
-       dest='https://reddit.zendesk.com/')
+       dest='https://support.chatterly.me/faq')
 
     mc('/wiki/create/*page', controller='wiki', action='wiki_create')
     mc('/wiki/edit/*page', controller='wiki', action='wiki_revise')
